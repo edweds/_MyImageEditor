@@ -53,5 +53,6 @@ namespace MyPhotoshop.Data
                 return 1;
             return value;
         }
+        
     }
 }
