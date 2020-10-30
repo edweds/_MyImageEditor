@@ -16,7 +16,7 @@ namespace MyPhotoshop
 				for (int y=0;y<bmp.Height;y++)
 				{
 				var pixel=bmp.GetPixel (x,y);
-					photo.data[x, y] = new Pixel((double)pixel.R / 255, 
+					photo.data[x, y] = new Pixel(((double)pixel.R / 255), 
 						                         (double)pixel.G / 255, 
 												 (double)pixel.B / 255);
 				}

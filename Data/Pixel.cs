@@ -45,7 +45,7 @@ namespace MyPhotoshop.Data
             }
         }
     
-        public double CorrectingValue (double value)
+        public static double CorrectingValue (double value)
         {
             if (value < 0)
                 return 0;
