@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿
 
 namespace MyPhotoshop.Data
 {
-    public class Pixel
+    public struct Pixel
     {
-        public Pixel(double red, double green, double blue)
-        {
-            this.Red = red;
-            this.Green = green;
-            this.Blue = blue;
-        }
-
         //Red,Green and blue means saturation of each channel from 0 to 1 (converted from 0 to 255 format)
         //
         double red;
@@ -43,8 +32,7 @@ namespace MyPhotoshop.Data
             {
                blue= CorrectingValue(value);
             }
-        }
-    
+        }    
         public static double CorrectingValue (double value)
         {
             if (value < 0)
@@ -53,6 +41,19 @@ namespace MyPhotoshop.Data
                 return 1;
             return value;
         }
-        
+        public static Pixel operator*(Pixel pixel,double x)
+        {
+            var result = new Pixel();
+            result.Red = pixel.Red * x;
+            result.Green = pixel.Green * x;
+            result.Blue = pixel.Blue * x;
+            return result;
+        }
+
+        public static Pixel operator*( double x, Pixel pixel)
+        {
+            return pixel*x;
+        }
+
     }
 }

@@ -1,6 +1,3 @@
-using MyPhotoshop.Data;
-using System;
-
 namespace MyPhotoshop
 {
 	public class LighteningFilter : IFilter
@@ -24,12 +21,7 @@ namespace MyPhotoshop
 			var result=new Photo(original.width,original.height);		
 			for (int x=0;x<result.width;x++)
 				for (int y=0;y<result.height;y++)
-                {
-					result.data[x, y] = new Pixel(original[x, y].Red * parameters[0],
-												original[x, y].Green * parameters[0],
-												original[x, y].Blue * parameters[0]);
-				}
-						
+					result.data[x, y] = original[x, y] * parameters[0];
 			return result;
 		}
 	}

@@ -1,5 +1,4 @@
 using MyPhotoshop.Data;
-using System;
 
 namespace MyPhotoshop
 {
